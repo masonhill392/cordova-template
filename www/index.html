@@ -30,8 +30,8 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
     <!-- GOOGLE FONTS has been added to the security policy -->
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; media-src *; img-src 'self' data: content:; font-src 'self' data: fonts.gstatic.com;">
+    <!-- <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; media-src *; img-src 'self' data: content:; font-src 'self' data: fonts.gstatic.com;"> -->
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -41,8 +41,26 @@
 </head>
 
 <body>
+    <header>
+        <h1> Camera Application</h1>
+    </header>
+    <div class="wrapper">
+        <button id="takePhoto">
+            <h2 id="buttontext">Take a Photo</h2>
+        </button>
+    </div>
 
-    <button id="takePhoto">Take a Photo</button>
+    <div class="gallery-wrapper">
+        <div class="gallery">
+
+            <!-- <div class="container" id="0">
+                <h2>Photo 1</h2>
+                <img src=''>
+            </div>
+
+        </div>
+    </div>
+
 
     <script src="cordova.js"></script>
     <script src="js/jquery-3.6.1.min.js"></script>

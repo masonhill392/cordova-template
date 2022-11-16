@@ -1,6 +1,6 @@
 
 document.addEventListener('deviceready', onDeviceReady, false);
-
+var photonumber = 1;
 function onDeviceReady() {
     // Cordova is now initialized. Have fun!
     var options = {
@@ -12,8 +12,8 @@ function onDeviceReady() {
     $("#takePhoto").on("click", takePic);
 
     function takePic() {
+        console.log("takePic clicked");
         navigator.camera.getPicture(onSuccess, onError, options)
-        console.log("takePic")
     }
 
     function onSuccess(imageData) {//when takePic Successfull
@@ -21,10 +21,13 @@ function onDeviceReady() {
             var myNewImage = fileEntry.toURL()
             console.log(myNewImage);
             // do something with URL, assign to src or create an html 
-            $("#takePhoto").after(" <img src='" + myNewImage + "'> ")
+            // $(".gallery").after(" <img src='" + myNewImage + "'> ")
+            $(".gallery").after("<div class='container'><h2>Photo " + photonumber + "</h2><div class='center'><img src='" + myNewImage + "'></div></div>");
+
+            photonumber++;
+            console.log(photonumber);
         }, onError);
     }
-
     function onError(message) {//when takePic error
         alert("Photo not taken because: " + message)
     }
